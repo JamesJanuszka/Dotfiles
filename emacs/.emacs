@@ -34,9 +34,6 @@
   (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
 (package-initialize) ;; You might already have this line
 
-;;(toggle-frame-fullscreen)
-(global-set-key [f12] 'recompile)
-
 (add-hook 'after-init-hook 'global-company-mode)
 ; start auto-complete with emacs
 ;(require 'auto-complete)
@@ -64,9 +61,6 @@
 
 (eval-after-load 'company
   '(add-to-list 'company-backends 'company-irony 'company-lua))
-
-;; Make Company complete use C++14
-
 
 ;; Configure backups
 (setq backup-directory-alist '(("." . "~/.saves")))
@@ -104,17 +98,16 @@
                 (ibuffer-switch-to-saved-filter-groups "default")))
 (setq ibuffer-show-empty-filter-groups nil)
 
-;; Configure Dired+
-;; (require 'dired+)
-;; (diredp-make-find-file-keys-reuse-dirs)
-
 ;; Stop C-z from hangin emacs
 (global-unset-key (kbd "C-z"))
 
 ;; Turn off beeping
 (setq ring-bell-function 'ignore)
+
+;; Load Gruvbox colour theme
 (load-theme 'gruvbox t)
 
+;; Setup Ranger Filemanager
 (setq ranger-override-dired 'ranger)
 (setq ranger-show-hidden t)
 (ranger-override-dired-mode t)
