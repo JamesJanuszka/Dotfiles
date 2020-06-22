@@ -151,6 +151,6 @@ exec "setxkbmap -layout gb"
 bindsym $mod+d exec dmenu_run
 
 # program lauch hotkeys
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec urxvt -e tmux
 bindsym $mod+e exec emacsclient -c
 bindsym $mod+c exec chromium
